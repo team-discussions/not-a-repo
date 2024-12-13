@@ -1,0 +1,22 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  deploy-prod:
+    environment: production
+    run: |
+      echo production environment deployed
+  deploy-staging:
+    environment: staging
+    run: |
+      echo staging environment deployed
+  deploy-test:
+    environment: testing
+    run: |
+      echo testing environment deployed
