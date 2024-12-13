@@ -10,13 +10,13 @@ on:
 jobs:
   deploy-prod:
     environment: production
-    run: |
-      echo production environment deployed
+    steps:
+    - run: echo production environment deployed
   deploy-staging:
     environment: staging
-    run: |
-      echo staging environment deployed
+    steps:
+    - run: echo staging environment deployed
   deploy-test:
     environment: testing
-    run: |
-      echo testing environment deployed
+    steps:
+      - run: echo testing environment deployed
