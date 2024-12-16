@@ -7,19 +7,36 @@ on:
   pull_request:
     branches:
       - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy-prod:
+    runs-on: ubuntu-latest
     environment: production
-    runs-on: ubuntu-latest
     steps:
-    - run: echo production environment deployed
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Deploy
+      shell: bash
+      run: echo production environment deployed
   deploy-staging:
+    runs-on: ubuntu-latest
     environment: staging
-    runs-on: ubuntu-latest
     steps:
-    - run: echo staging environment deployed
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Deploy
+      shell: bash
+      run: echo staging environment deployed
   deploy-test:
-    environment: testing
     runs-on: ubuntu-latest
+    environment: testing
     steps:
-      - run: echo testing environment deployed
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Deploy
+      shell: bash
+      run: echo test environment deployed
