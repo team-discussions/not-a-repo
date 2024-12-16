@@ -1,3 +1,3 @@
 # not-a-repo 
 
-Test.
+But a repo.
