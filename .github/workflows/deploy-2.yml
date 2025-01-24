@@ -1,0 +1,42 @@
+name: Deployment Two
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Deploy
+      shell: bash
+      run: echo production environment deployed
+  deploy-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Deploy
+      shell: bash
+      run: echo staging environment deployed
+  deploy-test:
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Deploy
+      shell: bash
+      run: echo test environment deployed
