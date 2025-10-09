@@ -7,11 +7,11 @@ But a repo. I'm going to make some changes for testing purposes.
 Welcome to the most serious repository that's definitely NOT a repo! 🎉
 
 ```
-    ___
-   /   \
-  | o o |  <- This is Bob. Bob likes testing.
-   \   /      Be like Bob.
-    ---
+     ___
+    /   \
+   | o o |  <- This is Bob. Bob likes testing.
+    \   /      Be like Bob.
+     ---
 ```
 
 ### Fun Facts About This Repo:
